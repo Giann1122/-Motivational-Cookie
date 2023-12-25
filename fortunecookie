@@ -1,0 +1,105 @@
+package com.mycompany.fortunecookie;
+
+import java.lang.Thread;
+import java.util.Random;
+import java.util.Scanner;
+public class FortuneCookie { 
+    
+   static String[] motivation = {"It does not matter how slowly you go as long as you do not stop.",
+                                 "To live is to suffer, to survive is to find some meaning in the suffering.",  
+                                 "If it's endurable, then endure it.",
+                                 "The only true wisdom is in knowing you know nothing.",
+                                 "Quality is not an act, it is a habit.",};
+   
+   static String[] moti = { "15 Push ups", "15 Curl ups", "15 Pull ups", "15 Squats", "15 Jumping Jax",};
+  
+       
+   
+
+
+    public static void main(String[] args) throws InterruptedException {
+        Scanner sc = new Scanner(System.in);
+        Random ran = new Random();
+       
+        
+         System.out.println("\t\t------------------------------");
+         System.out.println("\t\t| Gian's Motivational Cookie |");
+         System.out.println("\t\t------------------------------");
+         System.out.println();
+                
+      System.out.println("Select a Cookie from 1 to 5 and break it to see what's inside!");
+      int num = sc.nextInt();
+      int ranMotivs = ran.nextInt(5);
+      Thread.sleep(2000);
+     
+      System.out.println("it breaks!");
+      System.out.println();
+      Thread.sleep(1500); 
+      
+      System.out.println("Your Motivational Cookie Say: ");
+      Thread.sleep(1500);
+      System.out.println(motivation[ranMotivs]);
+      Thread.sleep(2500);
+      System.out.println();
+      
+      System.out.println("Your Exercise Say:");
+      Thread.sleep(1500);
+      
+      System.out.println("Do " + moti[ranMotivs] + " today");
+      Thread.sleep(1500);
+      System.out.println();
+      
+      System.out.println("Perform Your Exercise");
+      Thread.sleep(1500);
+      
+      
+        for (int reps = 1; reps <= 15; reps++) {
+            System.out.println(reps + "... " + "Done!");
+            Thread.sleep(2000);
+            System.out.println();
+            
+            if (reps == 10) {
+                System.out.println("You look stuggling Bud, do you want to continue? (Yes/No)");
+                sc.nextLine();
+                String Push = sc.nextLine();
+                System.out.println();
+
+                if (Push.equalsIgnoreCase("Yes")) {
+                    System.out.println("That's the spirit Bud!");
+                     System.out.println();
+                }
+                else if (Push.equalsIgnoreCase("No")) {
+                    
+                    System.out.println("Surpass your limit Bud!");
+                    System.out.println();
+                    break;
+                } 
+            }
+            if(reps == 13) {
+                System.out.println("Almost there Bud 2 more reps!");
+                Thread.sleep(2000);
+                System.out.println(); 
+            }
+            
+            if (reps == 15) {
+                
+                System.out.println("well done Bud, you've surpassed your limit!");
+                Thread.sleep(1500);
+                System.out.println();
+            }
+        }
+             
+      System.out.println("Your Motivational Numbers Today is:");
+        
+        for(int n = 0; n < num; n++) {
+            int motiveNumber = ran.nextInt(5);
+            int[] motiveArray = new int[num];
+            motiveArray[n] = motiveNumber;
+            
+            if (n < num) {
+                System.out.print(motiveArray[n] + "  ");
+            }
+            Thread.sleep(1500);
+        }
+    }
+}
